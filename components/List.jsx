@@ -1,15 +1,18 @@
+import { Button } from "./ui/button";
+import { TableCell, TableRow } from "@/components/ui/table";
 const List = () => {
   return (
-    <li className="bg-white p-2 m-2 rounded-md flex flex-row justify-between items-center gap-2">
-      <span className=" flex flex-col">
-        <h2 className=" font-bold">Title</h2>
-        <p className=" font-extralight"> deleniti, ullam autem possimus corrupti distinctio vitae fuga voluptates ratione repellat veniam tempora. Eum, aut.</p>
-      </span>
-      <span className="flex flex-row gap-2">
-        <button>Edit</button>
-        <button>Delete</button>
-      </span>
-    </li>
+    <TableRow>
+      <TableCell className="font-medium">make a website</TableCell>
+      <TableCell>processing</TableCell>
+      <TableCell>task mangment app crud</TableCell>
+      <TableCell className="text-right">
+        <span className="flex flex-row justify-end gap-2">
+          <Button variant="outline">Edit</Button>
+          <Button variant="destructive">Delete</Button>
+        </span>
+      </TableCell>
+    </TableRow>
   );
 };
 
