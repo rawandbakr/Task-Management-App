@@ -16,7 +16,7 @@ const AddList = () => {
   const onSubmit = async (data) => {
     try {
       console.log(data);
-      const res = await fetch("http://localhost:3000/api/tasks", {
+      const res = await fetch("/api/tasks", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
