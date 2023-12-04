@@ -12,13 +12,32 @@ const AddList = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    toast({
-      title: data.Title,
-      description: data.Date,
-      action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
-    });
+
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+      const res = await fetch("http://localhost:3000/api/tasks", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      console.log(res);
+      if (res.ok) {
+        console.log("Yeai!");
+      } else {
+        console.log("Oops! Something is wrong.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+  // toast({
+  //   title: data.Title,
+  //   description: data.Date,
+  //   action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+  // });
 
   return (
     <div className="flex border-2 flex-col h-screen w-1/3  p-2 m-2">
@@ -28,32 +47,32 @@ const AddList = () => {
         onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          id="Title"
+          id="title"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Title"
-          {...register("Title", { required: true, maxLength: 20 })}
+          {...register("title", { required: true, maxLength: 20 })}
         />
-        {errors.Title && (
+        {errors.title && (
           <p className=" text-red-500 font-mono">Title is required.</p>
         )}
         <input
           type="text"
-          id="Description"
+          id="description"
           className="shadow appearance-none border rounded w-full py-8 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Description"
-          {...register("Description", { required: true, maxLength: 200 })}
+          {...register("description", { required: true, maxLength: 200 })}
         />
-        {errors.Description && (
+        {errors.description && (
           <p className=" text-red-500 font-mono">Description is required.</p>
         )}
         <input
           type="date"
-          id="Date"
+          id="date"
           className=" appearance-none border rounded shadow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          {...register("Date", { required: true })}
+          {...register("date", { required: true })}
         />
 
-        {errors.Date && (
+        {errors.date && (
           <p className=" text-red-500 font-mono">Date is required.</p>
         )}
         <Button variant="outline" type="submit">
