@@ -23,9 +23,12 @@ const AddList = () => {
           "content-type": "application/json",
         },
       });
-      console.log(res);
       if (res.ok) {
-        console.log("Yeai!");
+        toast({
+          title: data.title,
+          description: data.description,
+          action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+        });
       } else {
         console.log("Oops! Something is wrong.");
       }
@@ -33,11 +36,7 @@ const AddList = () => {
       console.log(error);
     }
   };
-  // toast({
-  //   title: data.Title,
-  //   description: data.Date,
-  //   action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
-  // });
+  
 
   return (
     <div className="flex border-2 flex-col h-screen w-1/3  p-2 m-2">
