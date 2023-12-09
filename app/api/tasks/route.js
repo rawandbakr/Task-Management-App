@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import connect from "@/db";
 import Task from "@/models/Task";
 
 export async function GET() {
@@ -17,7 +16,6 @@ export async function POST(req) {
     const body = await req.json();
     console.log(body);
     const taskData = body;
-    console.log(taskData);
     await Task.create(taskData);
 
     return NextResponse.json({ message: "Task Created" }, { status: 201 });

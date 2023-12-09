@@ -1,13 +1,17 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 
 export const Nav = () => {
   return (
     <nav className=" flex flex-row justify-around items-center w-full h-20">
-      <h1>My Tasks</h1>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <Link href="/">My Tasks</Link>
+      <span className=" flex flex-row justify-center items-center gap-4">
+        <Link href="/Add">Add</Link>
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </span>
     </nav>
   );
 };
