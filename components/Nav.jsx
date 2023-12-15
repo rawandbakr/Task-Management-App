@@ -6,7 +6,6 @@ export const Nav = () => {
     <nav className=" flex flex-row justify-around items-center w-full h-20">
       <Link href="/">My Tasks</Link>
       <span className=" flex flex-row justify-center items-center gap-4">
-        <Link href="/Add">Add</Link>
         <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>

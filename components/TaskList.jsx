@@ -1,5 +1,4 @@
-"use client";
-
+import { GetTasks } from "@/lib/data";
 import List from "./List";
 import {
   Table,
@@ -7,21 +6,13 @@ import {
   TableCaption,
   TableHead,
   TableHeader,
-  TableCell,
   TableRow,
 } from "@/components/ui/table";
-import useSWR from "swr";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
-export default function TaskList() {
-  const { data, error } = useSWR("/api/tasks", fetcher);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-  const taskss = data.tasks;
+export default async function TaskList() {
+  const data = await GetTasks();
   return (
-    <div className="flex flex-col h-full m-2 w-2/3  items-center gap-2 p-2">
+    <div className="flex flex-col h-full m-2 md:w-2/3  items-center gap-2 p-2">
       <Table>
         <TableCaption>A list of your recent tasks</TableCaption>
         <TableHeader>
@@ -33,9 +24,11 @@ export default function TaskList() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {taskss.map((task)=>
-          <List task={task} key={task._id}/>
-          )}
+          {data.map((task,index)=>
+          <List 
+          key={index} 
+          task={task}
+          />)} 
         </TableBody>
       </Table>
     </div>
