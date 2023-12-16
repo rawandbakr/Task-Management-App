@@ -2,7 +2,7 @@
 import DeleteBtn from "./DeleteBtn";
 import EditBtn from "./EditBtn";
 import { Button } from "./ui/button";
-import { TableCell, TableRow } from "@/components/ui/table";
+import { TableCell, TableRow ,TableHead } from "@/components/ui/table";
 
 const List = ({ task }) => {
   return (
