@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
-import { CreateTasks } from "@/lib/data";
+import { CreateTasks } from "@/lib/actions";
 
 const AddList = () => {
  

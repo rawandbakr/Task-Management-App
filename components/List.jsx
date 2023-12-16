@@ -1,4 +1,6 @@
 "use client"
+import DeleteBtn from "./DeleteBtn";
+import EditBtn from "./EditBtn";
 import { Button } from "./ui/button";
 import { TableCell, TableRow } from "@/components/ui/table";
 
@@ -10,9 +12,8 @@ const List = ({ task }) => {
       <TableCell>{task.status}</TableCell>
       <TableCell className="text-right">
         <span className="flex flex-row justify-end gap-2">
-          <Button variant="outline">
-            Edit
-          </Button>
+          <EditBtn id={task.id}/>
+          <DeleteBtn id={task.id}/>
         </span>
       </TableCell>
     </TableRow>
