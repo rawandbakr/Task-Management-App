@@ -1,12 +1,12 @@
-import { Edit2Icon, Edit3Icon } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from "./ui/button";
+import Link from "next/link";
 
-const EditBtn = ({id}) => {
+const EditBtn = ({ id }) => {
   return (
     <Button variant="default" size="">
-        Edit
+      <Link href={`/${id}/Edit`}>Edit</Link>
     </Button>
-  )
-}
+  );
+};
 
-export default EditBtn
+export default EditBtn;

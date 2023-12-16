@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Nav />
-            <main>
+            <main className="bg-gray-200 h-screen w-full">
             {children}
             </main>
             <Toaster/>
