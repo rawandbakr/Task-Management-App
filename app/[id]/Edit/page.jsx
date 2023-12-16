@@ -7,7 +7,7 @@ export default async function Edit({params}) {
         const task=await GetTasksId(id)
   return (
     <div>
-        <EditList data={task}/>
+        <EditList data={task[0]}/>
     </div>
   )
 }
