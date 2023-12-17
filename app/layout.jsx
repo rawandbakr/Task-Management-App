@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
-import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <SpeedInsights/>
       <body className={inter.className}>
         <header>
           <Nav />
         </header>
         <main className="bg-gray-200 h-max w-full">{children}</main>
-        <Toaster />
       </body>
     </html>
   );
