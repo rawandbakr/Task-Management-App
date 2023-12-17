@@ -12,7 +12,6 @@ import {
 export default async function TaskList() {
   const data = await GetTasks();
   return (
-    <div className="flex flex-col h-full m-2 md:w-2/3  items-center gap-2 p-2">
       <Table>
         <TableCaption>A list of your recent tasks</TableCaption>
         <TableHeader>
@@ -31,6 +30,5 @@ export default async function TaskList() {
           />)} 
         </TableBody>
       </Table>
-    </div>
   );
 }
