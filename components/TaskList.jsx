@@ -18,7 +18,7 @@ export default async function TaskList() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Title</TableHead>
-            <TableHead>Date</TableHead>
+            <TableHead>status</TableHead>
             <TableHead>Details</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>

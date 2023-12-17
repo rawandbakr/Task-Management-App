@@ -30,9 +30,9 @@ async function seedTasks() {
     const createTable = await sql`
     CREATE TABLE IF NOT EXISTS tasks (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    description varchar(255) NOT NULL,
-    status VARCHAR(255) NOT NULL,
-    date DATE NOT NULL
+    title varchar(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    status varchar(255) NOT NULL
   );
 `;
 
