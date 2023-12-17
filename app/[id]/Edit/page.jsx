@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetTasksId } from '@/lib/data'
-import EditList from '@/components/EditList'
+import EditList from '@/components/Form/EditList'
 
 export default async function Edit({params}) {
         const id=params.id
