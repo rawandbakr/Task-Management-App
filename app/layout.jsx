@@ -20,8 +20,8 @@ export default function RootLayout({ children,modal }) {
           <Nav />
         </header>
         <main className="bg-gray-200 h-max w-full">{children}
-        {modal}
         </main>
+        {modal}
       </body>
     </html>
   );

@@ -14,8 +14,8 @@ import {
 const EditList = ({ data }) => {
   const updateTaskwithId = UpdateTask.bind(null, data.id);
   return (
-    <div className="flex flex-col  w-full  p-2 m-2">
-      <h1 className=" font-extrabold rounded-sm bg-white w-fit">Update List</h1>
+    <div className="flex flex-col  md:h-screen md:w-1/3 w-full h-min  p-2 m-2">
+      <h1 className=" font-extrabold  px-4">Update List</h1>
       <form
         action={updateTaskwithId}
         className=" p-4 flex md:flex-col flex-row  md:justify-start md:items-start justify-start items-start w-full gap-2">
