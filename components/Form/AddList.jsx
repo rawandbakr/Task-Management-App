@@ -35,14 +35,6 @@ const AddList = () => {
           className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Description"
         />
-
-        {/* <input
-          type="text"
-          id="status"
-          name="status"
-          placeholder="Status"
-          className=" appearance-none  rounded shadow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        /> */}
         <Select id="status" name="status">
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a Status" />
@@ -52,7 +44,7 @@ const AddList = () => {
               <SelectLabel>Status</SelectLabel>
               <SelectItem value="Planned">Planned</SelectItem>
               <SelectItem value="Review">Review</SelectItem>
-              <SelectItem value="In progress">In progress</SelectItem>
+              <SelectItem value="Inprogress">In progress</SelectItem>
               <SelectItem value="Complete">Complete</SelectItem>
             </SelectGroup>
           </SelectContent>

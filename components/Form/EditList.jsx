@@ -11,12 +11,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-
 const EditList = ({ data }) => {
   const updateTaskwithId = UpdateTask.bind(null, data.id);
   return (
-    <div className="flex flex-col  md:h-screen md:w-1/3 w-full  p-2 m-2">
-      <h1 className=" font-extrabold px-4">Add To List</h1>
+    <div className="flex flex-col  w-full  p-2 m-2">
+      <h1 className=" font-extrabold rounded-sm bg-white w-fit">Update List</h1>
       <form
         action={updateTaskwithId}
         className=" p-4 flex md:flex-col flex-row  md:justify-start md:items-start justify-start items-start w-full gap-2">
@@ -39,7 +38,7 @@ const EditList = ({ data }) => {
           placeholder="Description"
         />
 
-<Select id="status" name="status">
+        <Select id="status" name="status" value={data.status}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a Status" />
           </SelectTrigger>
@@ -48,13 +47,13 @@ const EditList = ({ data }) => {
               <SelectLabel>Status</SelectLabel>
               <SelectItem value="Planned">Planned</SelectItem>
               <SelectItem value="Review">Review</SelectItem>
-              <SelectItem value="In progress">In progress</SelectItem>
+              <SelectItem value="Inprogress">In progress</SelectItem>
               <SelectItem value="Complete">Complete</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
         <Button variant="default" type="submit">
-          Add
+          Update
         </Button>
       </form>
     </div>

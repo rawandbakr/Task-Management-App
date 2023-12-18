@@ -2,7 +2,6 @@
 import DeleteBtn from "../Form/DeleteBtn";
 import EditBtn from "../Form/EditBtn";
 import Status from "../Form/Status";
-import { Button } from "../ui/button";
 import { TableCell, TableRow, TableHead } from "@/components/ui/table";
 
 const List = ({ task }) => {

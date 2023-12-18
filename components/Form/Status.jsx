@@ -7,7 +7,7 @@ const Status = ({ status }) => {
         return `bg-orange-200`;
       case `Complete`:
         return `bg-green-200`;
-      case `In progress`:
+      case `Inprogress`:
         return `bg-yellow-200`;
       default:
         return "";
