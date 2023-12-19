@@ -2,6 +2,7 @@ import AddList from "@/components/Form/AddList";
 import TaskList from "@/components/List/TaskList";
 import { Suspense } from "react";
 
+
 export default async function Home() {
   return (
     <div>

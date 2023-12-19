@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import AuthProvider from "@/components/authProvider";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,6 +17,7 @@ export default function RootLayout({ children,modal }) {
   return (
     <html lang="en">
       <SpeedInsights/>
+      <AuthProvider>
       <body className={inter.className}>
         <header>
           <Nav />
@@ -23,6 +26,7 @@ export default function RootLayout({ children,modal }) {
         </main>
         {modal}
       </body>
+      </AuthProvider>
     </html>
   );
 }
