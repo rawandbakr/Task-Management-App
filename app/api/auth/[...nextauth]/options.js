@@ -5,9 +5,13 @@ import { Pool } from "pg";
 const pool = new Pool({
   host:process.env.POSTGRES_HOST,
   user: process.env.POSTGRES_USER,
+  password:process.env.POSTGRES_PASSWORD,
+  database:process.env.POSTGRES_DATABASE,
+  ssl:true,
   max: 20,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 20000,
+
 });
 
 export const options = {
@@ -18,4 +22,12 @@ export const options = {
       clientSecret: process.env.GITHUB_Secret,
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      return token;
+    },
+    async session({ session, token }) {
+      return session;
+    },
+  },
 };
