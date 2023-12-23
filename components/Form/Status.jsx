@@ -2,13 +2,13 @@ const Status = ({ status }) => {
   const color = () => {
     switch (status) {
       case `Planned`:
-        return `bg-blue-200`;
+        return `bg-blue-300`;
       case `Review`:
-        return `bg-orange-200`;
+        return `bg-orange-300`;
       case `Complete`:
-        return `bg-green-200`;
+        return `bg-green-300`;
       case `Inprogress`:
-        return `bg-yellow-200`;
+        return `bg-yellow-300`;
       default:
         return "";
     }

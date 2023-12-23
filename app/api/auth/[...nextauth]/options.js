@@ -26,7 +26,8 @@ export const options = {
     async jwt({ token, user }) {
       return token;
     },
-    async session({ session, token }) {
+    async session({ session,user, token }) {
+      session.user=user;
       return session;
     },
   },
