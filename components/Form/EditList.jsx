@@ -38,7 +38,7 @@ const EditList = ({ data }) => {
           placeholder="Description"
         />
 
-        <Select id="status" name="status" value={data.status}>
+        <Select id="status" name="status" defaultValue={data.status}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a Status" />
           </SelectTrigger>
